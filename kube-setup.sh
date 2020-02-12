@@ -32,9 +32,9 @@ chmod +x minikube
 cp minikube /usr/local/bin
 
 minikube config set memory 8192
-minikube config set cpus 4
+minikube config set cpus 2
 
 echo at this point, reboot your Fedora Server. After reboot, manually run:
 echo vboxconfig
-echo VBoxManage modifyvm "minikube" --cpus 4 --memory 4096
-echo minikube start --memory=4096 --cpus=4
+echo VBoxManage modifyvm "minikube" --cpus 2 --memory 8192
+echo minikube start --memory=8192 --cpus=2
