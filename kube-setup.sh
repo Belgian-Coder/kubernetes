@@ -9,7 +9,7 @@ rm -f /etc/yum.repos.d/vbox.repo
 cat << REPO >> /etc/yum.repos.d/vbox.repo
 [virtualbox]
 name=Fedora $releasever - $basearch - VirtualBox
-baseurl=http://download.virtualbox.org/virtualbox/rpm/fedora/\$releasever/\$basearch
+baseurl=http://download.virtualbox.org/virtualbox/rpm/rhel/\$releasever/\$basearch
 enabled=1
 gpgcheck=0
 repo_gpgcheck=0
@@ -30,6 +30,9 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
 
 chmod +x minikube
 cp minikube /usr/local/bin
+
+minikube config set memory 8192
+minikube config set cpus 4
 
 echo at this point, reboot your Fedora Server. After reboot, manually run:
 echo vboxconfig
